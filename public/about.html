@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>About — Aitu market</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/"><span class="logo"></span><span>Aitu market</span></a>
+      <nav class="navlinks">
+        <a class="pill" href="index.html">Catalog</a>
+        <a class="pill" href="add.html">Add product</a>
+        <a class="pill" href="admin.html">Admin</a>
+        <a class="pill" href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1 class="h-title">About this project</h1>
+      <p class="h-sub">A simple but polished online market UI connected to a Node.js + Express + MongoDB backend. Built to satisfy Assignment 3 Part 2 requirements.</p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">What you can show during defense</h2>
+          <ul style="color:var(--muted); line-height:1.7">
+            <li>Open the public Render URL (root <span style="font-family:var(--mono)">/</span> shows the UI)</li>
+            <li>Create products (Add page)</li>
+            <li>Read products (Catalog & Admin pages)</li>
+            <li>Update products (Edit page or quick stock update in Admin)</li>
+            <li>Delete products (Catalog/Admin)</li>
+            <li>Explain environment variables: <span style="font-family:var(--mono)">PORT</span> and <span style="font-family:var(--mono)">MONGO_URI</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="card">
+        <div class="card-body">
+          <h2 class="card-title">API endpoints</h2>
+          <p class="small" style="margin-top:6px">Base: <span style="font-family:var(--mono)">/api/products</span></p>
+          <ul style="color:var(--muted); line-height:1.7; font-family:var(--mono)">
+            <li>GET /api/products</li>
+            <li>GET /api/products/:id</li>
+            <li>POST /api/products</li>
+            <li>PUT /api/products/:id</li>
+            <li>DELETE /api/products/:id</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

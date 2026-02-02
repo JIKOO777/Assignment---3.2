@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Aitu market — Online Store</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <span class="logo"></span>
+        <span>Aitu market</span>
+      </a>
+      <nav class="navlinks">
+        <a class="pill" href="index.html">Catalog</a>
+        <a class="pill" href="add.html">Add product</a>
+        <a class="pill" href="admin.html">Admin</a>
+        <a class="pill" href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1 class="h-title">Find your next favorite thing.</h1>
+      <p class="h-sub">A mini online market with a production-ready UI. All data is loaded dynamically from the backend API. Full CRUD is available through the web interface.</p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Catalog</h2>
+          <p class="small">Search, sort, view details, edit or delete items.</p>
+        </div>
+        <div class="card-body">
+          <div class="row" style="margin-bottom:12px">
+            <div style="flex:1; min-width:220px">
+              <label class="label">Search</label>
+              <input id="q" class="input" placeholder="Search by title or category..."/>
+            </div>
+            <div style="width:220px">
+              <label class="label">Sort</label>
+              <select id="sort" class="select">
+                <option value="newest">Newest</option>
+                <option value="price_asc">Price ↑</option>
+                <option value="price_desc">Price ↓</option>
+                <option value="title_asc">Title A→Z</option>
+              </select>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-end">
+              <button id="btnSearch" class="btn">Apply</button>
+              <a class="btn good" href="add.html">+ Add</a>
+            </div>
+          </div>
+
+          <div id="catalog" class="catalog"></div>
+          <p id="empty" class="small" style="display:none; margin-top:10px">No products yet. Add your first item.</p>
+        </div>
+      </div>
+
+      <aside class="card">
+        <div class="card-header">
+          <h2 class="card-title">Store stats</h2>
+          <p class="small">Auto-calculated from MongoDB data.</p>
+        </div>
+        <div class="card-body">
+          <div class="kpi">
+            <div class="k">
+              <p class="n" id="kCount">0</p>
+              <p class="t">Products</p>
+            </div>
+            <div class="k">
+              <p class="n" id="kStock">0</p>
+              <p class="t">Total stock</p>
+            </div>
+            <div class="k" style="grid-column:1 / -1">
+              <p class="n" id="kValue">$0</p>
+              <p class="t">Inventory value (price × stock)</p>
+            </div>
+          </div>
+          <div style="margin-top:14px">
+            <a class="btn secondary" href="admin.html">Open Admin Table</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+  <script src="catalog.js"></script>
+</body>
+</html>

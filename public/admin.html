@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Admin — Aitu market</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    table{width:100%; border-collapse:separate; border-spacing:0; overflow:hidden}
+    th,td{padding:10px 10px; border-bottom:1px solid var(--border); vertical-align:top}
+    th{color:var(--muted); text-align:left; font-size:12px; letter-spacing:.5px; text-transform:uppercase}
+    tr:hover td{background: rgba(255,255,255,.02)}
+    .twrap{overflow-x:auto; border-radius:16px; border:1px solid var(--border)}
+    .mini{font-size:12px; color:var(--muted)}
+    .inline{display:flex; gap:8px; flex-wrap:wrap}
+    .tiny{padding:8px 10px; border-radius:12px}
+    .w120{width:120px}
+    .w160{width:160px}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/"><span class="logo"></span><span>Aitu market</span></a>
+      <nav class="navlinks">
+        <a class="pill" href="index.html">Catalog</a>
+        <a class="pill" href="add.html">Add product</a>
+        <a class="pill" href="admin.html">Admin</a>
+        <a class="pill" href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1 class="h-title">Admin table</h1>
+      <p class="h-sub">One more UI page for defense: view all products in a table and manage them quickly.</p>
+    </section>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="row" style="margin-bottom:12px">
+          <div style="flex:1; min-width:220px">
+            <label class="label">Search</label>
+            <input id="q" class="input" placeholder="Search..."/>
+          </div>
+          <div style="width:220px">
+            <label class="label">Sort</label>
+            <select id="sort" class="select">
+              <option value="newest">Newest</option>
+              <option value="price_asc">Price ↑</option>
+              <option value="price_desc">Price ↓</option>
+              <option value="title_asc">Title A→Z</option>
+            </select>
+          </div>
+          <div style="display:flex; gap:10px; align-items:flex-end">
+            <button id="btnSearch" class="btn">Apply</button>
+            <a class="btn good" href="add.html">+ Add</a>
+          </div>
+        </div>
+
+        <div class="twrap">
+          <div style="overflow:auto">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th class="w120">Price</th>
+                  <th class="w120">Stock</th>
+                  <th class="w160">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="rows"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <p id="empty" class="small" style="display:none; margin-top:10px">No products.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
