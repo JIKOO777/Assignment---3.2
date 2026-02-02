@@ -27,15 +27,6 @@
 
 ---
 
-## 📦 Tech Stack
-- **Node.js**
-- **Express**
-- **MongoDB Atlas**
-- **Mongoose**
-- Vanilla **HTML/CSS/JavaScript**
-
----
-
 ## 🔧 Setup (Local)
 ### 1) Install
 ```bash
