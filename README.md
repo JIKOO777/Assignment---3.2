@@ -4,8 +4,6 @@
 - Web App: https://assignment-3-2-03vp.onrender.com/
 - API (products):https://assignment-3-2-03vp.onrender.com/api/products
 
-> Replace `YOUR-RENDER-APP` with your real Render URL.
-
 ---
 
 ## Features
